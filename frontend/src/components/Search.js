@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 const Search = () => {
   return (
-    <Container>
+    <Container className="mt-5">
       <Row>
         <Col>
           <Form>
