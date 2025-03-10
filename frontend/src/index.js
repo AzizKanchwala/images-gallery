@@ -10,5 +10,5 @@ root.render(
   </React.StrictMode>
 );
 
-const boot = ReactDOM.createRoot(document.getElementById('boot'));
-boot.render(<h2>Aziz Kanchwala</h2>);
+// const boot = ReactDOM.createRoot(document.getElementById('boot'));
+// boot.render(<h2>Aziz Kanchwala</h2>);
