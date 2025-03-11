@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import Search from "./components/Search";
 
-const UNSPLASH_KEY = REACT_APP_KEY;
+const UNSPLASH_KEY = "P9lcO0xOKJ2KmEOXN_4rwfGPTPy6Gwiqe0sbtl1Bxww";
 
 const App = () => {
   const [word, setWord] = useState("");
@@ -20,6 +20,8 @@ const App = () => {
       .catch((e) => {
         console.log(e);
       });
+    
+    setWord('')
   };
 
   return (
