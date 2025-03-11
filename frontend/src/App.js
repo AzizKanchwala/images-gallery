@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Search from "./components/Search";
 import ImageCard from "./components/ImageCard";
 import { Container, Row, Col } from "react-bootstrap";
+import Welcome from "./components/Welcome";
+// import Welcome from "./components/Welcome";
 
 const UNSPLASH_KEY = process.env.REACT_APP_KEY;
 
@@ -14,22 +16,24 @@ const App = () => {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     console.log(word);
-  
-    fetch(`https://api.unsplash.com/photos/random/?query=${word}&client_id=${UNSPLASH_KEY}`)
+
+    fetch(
+      `https://api.unsplash.com/photos/random/?query=${word}&client_id=${UNSPLASH_KEY}`
+    )
       .then((res) => res.json())
       .then((data) => {
-        setImages([{ ...data, title:word }, ...images]);
+        setImages([{ ...data, title: word }, ...images]);
         console.log(images);
       })
       .catch((e) => {
         console.log(e);
       });
-    
-    setWord('')
+
+    setWord("");
   };
 
   const handleDeleteImage = (id) => {
-    setImages(images.filter((image) => image.id !== id))
+    setImages(images.filter((image) => image.id !== id));
   };
 
   return (
@@ -41,13 +45,21 @@ const App = () => {
         handleSubmit={handleSearchSubmit}
       ></Search>
       <Container className="mt-4">
-        <Row xs={1} md={2} lg={3}>
-          {images.map((image,i) => (
-            <Col key={i} className="pb-3">
-            <ImageCard key={image.id || i} image={image} deleteImage={handleDeleteImage}></ImageCard>
-            </Col>
+        {images.length ? (
+          <Row xs={1} md={2} lg={3}>
+            {images.map((image, i) => (
+              <Col key={i} className="pb-3">
+                <ImageCard
+                  key={image.id || i}
+                  image={image}
+                  deleteImage={handleDeleteImage}
+                ></ImageCard>
+              </Col>
             ))}
-        </Row>
+          </Row>
+        ) : (
+          <Welcome></Welcome>
+        )}
       </Container>
     </div>
   );

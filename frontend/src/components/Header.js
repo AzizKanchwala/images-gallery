@@ -6,11 +6,11 @@ const navbarStyle = {
     backgroundColor: 'lightblue'
 };
 
-const Header = (props) => {
+const Header = ({title}) => {
   return (
     <Navbar style={navbarStyle} variant="light" expand="lg" className="p-2">
       <Container className="justify-content-center">
-        <Logo style = {{ maxWidth:'13rem'}}></Logo>
+        <Logo alt={title} style = {{ maxWidth:'13rem'}}></Logo>
       </Container>
     </Navbar>
   );
