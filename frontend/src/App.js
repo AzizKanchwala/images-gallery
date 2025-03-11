@@ -18,7 +18,6 @@ const App = () => {
       .then((res) => res.json())
       .then((data) => {
         setImages([data, ...images]);
-        console.log(images);
       })
       .catch((e) => {
         console.log(e);
