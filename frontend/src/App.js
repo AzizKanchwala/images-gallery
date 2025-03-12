@@ -5,7 +5,6 @@ import Search from "./components/Search";
 import ImageCard from "./components/ImageCard";
 import { Container, Row, Col } from "react-bootstrap";
 import Welcome from "./components/Welcome";
-// import Welcome from "./components/Welcome";
 
 const UNSPLASH_KEY = process.env.REACT_APP_KEY;
 
